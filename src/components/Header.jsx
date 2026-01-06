@@ -21,8 +21,9 @@ const Header = ({ navigate, currentPage }) => {
                             alt="IDA Logo"
                             className="h-12 w-auto object-contain"
                         />
-                        <h1 className="text-xl font-bold text-gray-900 hidden sm:block">
-                            Greyhales Academy
+                        <h1 className="text-xl font-bold text-gray-900">
+                            <span className="sm:hidden text-md">Greyhales Academy</span>
+                            <span className="hidden sm:inline text-xl">Greyhales Academy</span>
                         </h1>
                     </div>
 

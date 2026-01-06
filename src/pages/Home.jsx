@@ -86,7 +86,7 @@ const HomePage = ({ navigate }) => {
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
                     <div className="max-w-3xl">
                         <p className="font-script text-3xl underline text-orange-400 mb-4 animate-fade-in">
-                            Discover the Art of Interior Design
+                            Discover the Art of Greyhales Academy
                         </p>
                         <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8 animate-fade-in">
                             Comprehensive <br />

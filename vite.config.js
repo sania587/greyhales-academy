@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/greyhales-academy/',
+  base: process.env.GITHUB_PAGES === 'true' ? '/greyhales-academy/' : '/',
   plugins: [
     react(),
     tailwindcss(),

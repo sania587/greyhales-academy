@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+    /* Brand Colors */
+    --color-navy-950: #020617;
+    --color-navy-900: #0a101f;
+    --color-navy-800: #1a2333;
+    --color-navy-700: #2a3547;
+
+    /* Font Families */
+    --font-script: "Dancing Script", cursive;
+
+    /* Shared Animations */
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    --animate-fade-in: fade-in 0.8s ease-out forwards;
+}
+
+@layer base {
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+    body {
+        font-family: 'Outfit', sans-serif;
+    }
+}

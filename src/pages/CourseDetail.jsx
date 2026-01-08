@@ -62,7 +62,7 @@ const CourseDetailPage = ({ course, navigate }) => {
                                 </div>
                             ) : (
                                 <div className="space-y-10 animate-fade-in">
-                                    <h4 className="text-2xl font-bold text-navy-900">Course Outline - 课程大纲</h4>
+                                    <h4 className="text-2xl font-bold text-navy-900">Course Outline</h4>
                                     <div className="space-y-8">
                                         {course.curriculum && course.curriculum.length > 0 ? (
                                             course.curriculum.map((module, index) => (

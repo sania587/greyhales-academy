@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const AboutPage = () => {
+const AboutPage = ({ navigate }) => {
     const [sliderIndex, setSliderIndex] = useState(0);
     const sliderImages = [
         'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800',
@@ -20,7 +20,6 @@ const AboutPage = () => {
         <main>
             <div className="bg-gray-200 py-12 px-4 text-center">
                 <h1 className="text-4xl font-bold mb-2">About Us</h1>
-                <p className="text-gray-600">Home . About Us</p>
             </div>
 
             <section className="py-16 px-4">
@@ -82,7 +81,10 @@ const AboutPage = () => {
 
                     <div className="relative inline-block group">
                         <div className="absolute inset-0 bg-navy-900/30 translate-x-2 translate-y-2 rounded transition-transform group-hover:translate-x-1 group-hover:translate-y-1"></div>
-                        <button className="relative bg-[#EA9457] text-white px-12 py-5 rounded font-black text-2xl hover:bg-[#d88448] transition-all border-2 border-white/20">
+                        <button
+                            onClick={() => navigate('contact')}
+                            className="relative bg-[#EA9457] text-white px-12 py-5 rounded font-black text-2xl hover:bg-[#d88448] transition-all border-2 border-white/20">
+
                             Contact Us Now
                         </button>
                     </div>

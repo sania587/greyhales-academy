@@ -10,43 +10,43 @@ const CoursesPage = ({ navigate, onSelectCourse }) => {
             level: 'All Levels',
             curriculum: [
                 {
-                    title: "Level 1: Introduction to Interior Design",
+                    title: "Module 1: Introduction to Interior Design",
                     content: "An overview of interior design fundamentals, professional roles, design processes, and industry expectations. This module lays the foundation for understanding how interior design works in practice."
                 },
                 {
-                    title: "Level 2: Space Planning",
+                    title: "Module 2: Space Planning",
                     content: "Learn how to plan functional and efficient layouts by understanding scale, circulation, zoning, and furniture placement to maximize comfort and usability in interior spaces."
                 },
                 {
-                    title: "Level 3: Lighting in Interior Design",
+                    title: "Module 3: Lighting in Interior Design",
                     content: "Explore the principles of lighting, including natural and artificial light, lighting types, placement, and how lighting affects mood, functionality, and aesthetics."
                 },
                 {
-                    title: "Level 4: Color in Interior Design",
+                    title: "Module 4: Color in Interior Design",
                     content: "Understand color theory, color psychology, and how to create harmonious color schemes that enhance spaces and communicate the desired atmosphere."
                 },
                 {
-                    title: "Level 5: Textiles",
+                    title: "Module 5: Textiles",
                     content: "Gain insight into fabrics and soft furnishings, including their properties, applications, and how to select textiles that add comfort, texture, and visual interest to interiors."
                 },
                 {
-                    title: "Level 6: Interior Finishes",
+                    title: "Module 6: Interior Finishes",
                     content: "Learn about surface materials such as flooring, wall finishes, and ceilings, focusing on material selection, durability, and aesthetic impact."
                 },
                 {
-                    title: "Level 7: Furniture, Art, and Accessories",
+                    title: "Module 7: Furniture, Art, and Accessories",
                     content: "Discover how to select, arrange, and style furniture, artwork, and accessories to create balanced, cohesive, and visually appealing interiors."
                 },
                 {
-                    title: "Level 8: Mood Board",
+                    title: "Module 8: Mood Board",
                     content: "Learn how to create professional mood boards that visually communicate design concepts, materials, colors, and overall design direction."
                 },
                 {
-                    title: "Level 9: 3D Modeling",
+                    title: "Module 9: 3D Modeling",
                     content: "An introduction to 3D modeling tools and techniques used to visualize interior spaces and present design ideas clearly to clients."
                 },
                 {
-                    title: "Level 10: Final Project",
+                    title: "Module 10: Final Project",
                     content: "Apply everything learned throughout the course to complete a comprehensive interior design project, showcasing your skills from concept development to final presentation."
                 }
             ]

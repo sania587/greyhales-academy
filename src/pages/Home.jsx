@@ -19,22 +19,45 @@ const HomePage = ({ navigate }) => {
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    const itemsToShow = 3;
+    const [itemsToShow, setItemsToShow] = useState(3);
     const totalItems = courses.length;
+
+    // Update itemsToShow based on window size
+    useEffect(() => {
+        const updateItemsToShow = () => {
+            if (window.innerWidth < 640) {
+                setItemsToShow(1); // Mobile
+            } else if (window.innerWidth < 1024) {
+                setItemsToShow(2); // Tablet
+            } else {
+                setItemsToShow(3); // Desktop
+            }
+        };
+
+        updateItemsToShow();
+        window.addEventListener('resize', updateItemsToShow);
+        return () => window.removeEventListener('resize', updateItemsToShow);
+    }, []);
 
     useEffect(() => {
         const timer = setInterval(() => {
             nextSlide();
         }, 10000);
         return () => clearInterval(timer);
-    }, [currentIndex]);
+    }, [currentIndex, itemsToShow]);
 
     const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + itemsToShow) % totalItems);
+        setCurrentIndex((prev) => {
+            const nextIndex = prev + 1;
+            return nextIndex >= totalItems ? 0 : nextIndex;
+        });
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - itemsToShow + totalItems) % totalItems);
+        setCurrentIndex((prev) => {
+            const prevIndex = prev - 1;
+            return prevIndex < 0 ? totalItems - 1 : prevIndex;
+        });
     };
 
     return (
@@ -190,7 +213,7 @@ const HomePage = ({ navigate }) => {
                                 <div className="absolute -bottom-8 -left-8 sm:bottom-4 sm:-left-4 bg-white rounded-full shadow-2xl z-30 w-36 h-36 sm:w-56 sm:h-56 p-4 flex flex-col items-center justify-center text-center">
                                     <div className="absolute inset-3 border border-dashed border-gray-400 rounded-full"></div>
                                     <span className="relative z-10 text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Trusted By</span>
-                                    <span className="relative z-10 text-3xl sm:text-5xl font-black text-orange-500 leading-none italic">1000+</span>
+                                    <span className="relative z-10 text-3xl sm:text-5xl font-black text-orange-500 leading-none italic">500+</span>
                                     <span className="relative z-10 text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-widest mt-1">Students</span>
                                 </div>
 
@@ -229,7 +252,7 @@ const HomePage = ({ navigate }) => {
                         <div className="relative overflow-hidden px-4 md:px-12">
                             <div
                                 className="flex transition-transform duration-700 ease-in-out"
-                                style={{ transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` }}
+                                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                             >
                                 {courses.map((course, index) => (
                                     <div

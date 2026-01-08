@@ -5,7 +5,7 @@ const Footer = ({ navigate }) => {
     return (
         <footer className="bg-navy-900 text-white">
             <div className="max-w-7xl mx-auto px-4 py-20">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
                     {/* Logo & About */}
                     <div className="col-span-1 lg:col-span-1">
                         <div className="flex items-center space-x-3 mb-6 cursor-pointer" onClick={() => navigate('home')}>
@@ -51,16 +51,7 @@ const Footer = ({ navigate }) => {
                         </nav>
                     </div>
 
-                    {/* Courses */}
-                    <div>
-                        <h3 className="text-lg font-bold mb-6 border-b-2 border-orange-500 inline-block pb-1">Our Programs</h3>
-                        <nav className="flex flex-col space-y-4 text-gray-400">
-                            <span className="hover:text-white transition-colors cursor-default">Sketching Skill</span>
-                            <span className="hover:text-white transition-colors cursor-default">CAD (2D & 3D)</span>
-                            <span className="hover:text-white transition-colors cursor-default">Residential Design</span>
-                            <span className="hover:text-white transition-colors cursor-default">Commercial Design</span>
-                        </nav>
-                    </div>
+
 
                     {/* Contact Info */}
                     <div>
@@ -74,9 +65,7 @@ const Footer = ({ navigate }) => {
                                 <Mail size={20} className="text-orange-500 mt-1" />
                                 <span className="break-all">Info@greyhalesacademy.com</span>
                             </p>
-                            <div className="pt-4">
-                                <p className="text-sm italic opacity-60">"Transforming potential into tangible creativity."</p>
-                            </div>
+
                         </div>
                     </div>
                 </div>

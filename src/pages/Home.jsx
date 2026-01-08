@@ -4,29 +4,17 @@ import { ArrowRight, Phone, MessageCircle, MoreHorizontal, UserCheck, BookOpen, 
 const HomePage = ({ navigate }) => {
     const courses = [
         {
-            title: 'Module 1: Fundamental of Interior Design (Sketching Skill)',
-            img: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=800'
+            title: 'Module 1: Interior Design Blueprint Course',
+            img: 'https://jdinstituteoffashiontechnology.b-cdn.net/wp-content/uploads/2025/11/Certificate-Course-in-Modular-Interior-Design--1536x1024.webp'
         },
         {
-            title: 'Module 2: Computer Aids Design (2D)',
-            img: 'https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=800'
+            title: 'Module 2: Computer Aids Design',
+            img: 'https://www.elcamino.edu/images/New_CADD_Hero_Banner.jpg'
         },
         {
-            title: 'Module 3: Computer Aids Design (3D)',
-            img: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=800'
-        },
-        {
-            title: 'Module 4: Residential Design',
-            img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800'
-        },
-        {
-            title: 'Module 5: Commercial Design',
-            img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800'
-        },
-        {
-            title: 'Module 6: Final Project & Industry Portfolio',
-            img: 'https://images.unsplash.com/photo-1517245385169-d238b03e0734?auto=format&fit=crop&q=80&w=800'
-        },
+            title: 'Module 3: Interio Business Mastery',
+            img: 'https://booksofdiscovery.com/wp-content/uploads/2022/08/BM-F-450pxw.jpg'
+        }
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -86,7 +74,7 @@ const HomePage = ({ navigate }) => {
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
                     <div className="max-w-3xl">
                         <p className="font-script text-3xl underline text-orange-400 mb-4 animate-fade-in">
-                            Discover the Art of Greyhales Academy
+                            Acquire a Lifetime Knowledge
                         </p>
                         <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8 animate-fade-in">
                             Comprehensive <br />
@@ -104,7 +92,7 @@ const HomePage = ({ navigate }) => {
                             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-md px-6 py-4 rounded-md border border-white/20">
                                 <span className="text-3xl">🎓</span>
                                 <div className="text-white text-sm">
-                                    <span className="block font-bold text-lg leading-none">1000+</span>
+                                    <span className="block font-bold text-lg leading-none">500+</span>
                                     <span className="opacity-70">Trusted by Students</span>
                                 </div>
                             </div>
@@ -184,16 +172,16 @@ const HomePage = ({ navigate }) => {
                                 <div className="absolute inset-0 -translate-x-6 translate-y-2 border-[1.5px] border-orange-500 rounded-full z-0 opacity-80"></div>
 
                                 {/* 3. Main Image Container (Circular) */}
-                                <div className="absolute inset-0 rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] z-10">
+                                <div className="absolute inset-0 rounded-full overflow-hidden border-1 border-orange-700/20 shadow-[0_20px_50px_rgba(0,0,0,0.15)] z-10">
                                     <img
-                                        src="https://www.interiordesignacademy.my/wp-content/uploads/2025/01/smallclass3.jpg"
+                                        src="../src/assets/image.jpeg"
                                         alt="Small Class Training"
                                         className="w-full h-full object-cover scale-110"
                                     />
 
                                     {/* 4. Inner White Ring Overlay */}
                                     <div className="absolute inset-0 flex items-center justify-center p-[20%]">
-                                        <div className="w-full h-full rounded-full border-[18px] border-white/90 shadow-inner"></div>
+                                        <div className="w-full h-full rounded-full border-[18px] border-orange-500/90 shadow-inner"></div>
                                     </div>
                                 </div>
 
@@ -297,18 +285,30 @@ const HomePage = ({ navigate }) => {
                     <div className="grid lg:grid-cols-2 gap-20 items-center">
                         <div className="space-y-8">
                             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                                Benefits of learning with <span className="text-orange-500 italic">Greyhales Academy</span>
+                                Why Choose <span className="text-orange-500 italic">Greyhales Academy?</span>
                             </h2>
                             <p className="text-gray-400 text-lg leading-relaxed">
-                                Learn essential design skills with tailored courses in sketching, 2D/3D software, and project design. Small class sizes and expert guidance prepare you for success in residential and commercial interior design.
+                                Discover how to create stunning spaces, build a design business, and work with clients worldwide, all from the comfort of your home with our premium online interior design programs. We help you design with confidence and launch a thriving career.
                             </p>
 
-                            <div className="space-y-6">
+                            <div className="grid grid-cols-2 space-y-5">
                                 {[
-                                    "Personalized Professional Guidance",
-                                    "Small Class Basis (Max 10 Pax)",
-                                    "Practical Hands-On Experience",
-                                    "Comprehensive 5-Module Curriculum"
+
+                                    "High Quality Curriculum",
+
+                                    "Dedicated Facilitators",
+
+                                    "Flexible Learning",
+
+                                    "Creative Community",
+
+                                    "Certificate Of Completion",
+
+                                    "Internship Opportunities",
+
+                                    "Data Bundle Rewards",
+
+                                    "Lifetime Access"
                                 ].map((benefit, i) => (
                                     <div key={i} className="flex items-center space-x-4">
                                         <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500 flex-shrink-0">
@@ -352,11 +352,11 @@ const HomePage = ({ navigate }) => {
                 </div>
 
                 <div className="pl-4 md:pl-10">
-                    <h2 className="text-5xl md:text-8xl font-black text-white mb-12 leading-[1] drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
-                        Transform spaces, <br />
-                        shape careers, and <br />
-                        make a meaningful <br />
-                        impact.
+                    <h2 className="text-6xl md:text-8xl font-black text-white mb-12 leading-[1] drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
+                        Learn anywhere, <br />
+                        design confidently, and <br />
+                        turn your passion into <br />
+                        a thriving career.
                     </h2>
 
                     <div className="relative inline-block">

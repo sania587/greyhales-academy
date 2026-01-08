@@ -51,7 +51,7 @@ const CourseDetailPage = ({ course, navigate }) => {
                             {activeTab === 'overview' ? (
                                 <div className="space-y-8 animate-fade-in">
                                     <p className="text-gray-600 leading-relaxed text-lg italic">
-                                        {course.longDesc || "This comprehensive module is designed to provide students with a deep understanding of industry standards and professional workflows."}
+                                        {course.desc}
                                     </p>
                                     <div>
                                         <h4 className="text-2xl font-bold text-navy-900 mb-4">Objective:</h4>
@@ -64,16 +64,21 @@ const CourseDetailPage = ({ course, navigate }) => {
                                 <div className="space-y-10 animate-fade-in">
                                     <h4 className="text-2xl font-bold text-navy-900">Course Outline - 课程大纲</h4>
                                     <div className="space-y-8">
-                                        {[1, 2, 3].map((lesson) => (
-                                            <div key={lesson} className="border-l-4 border-orange-500 pl-6">
-                                                <h5 className="text-xl font-bold text-navy-900 mb-3">Lesson {lesson}: Professional Introduction</h5>
-                                                <ul className="space-y-2 text-gray-500">
-                                                    <li>• Introduction to core concepts and industry fundamentals.</li>
-                                                    <li>• Understanding different design typologies and space planning.</li>
-                                                    <li>• Case studies of successful international projects.</li>
-                                                </ul>
+                                        {course.curriculum && course.curriculum.length > 0 ? (
+                                            course.curriculum.map((module, index) => (
+                                                <div key={index} className="border-l-4 border-orange-500 pl-6 py-2">
+                                                    <h5 className="text-xl font-bold text-navy-900 mb-3">{module.title}</h5>
+                                                    <p className="text-gray-600 leading-relaxed">{module.content}</p>
+                                                </div>
+                                            ))
+                                        ) : (
+                                            <div className="border-l-4 border-orange-500 pl-6 py-2">
+                                                <h5 className="text-xl font-bold text-navy-900 mb-3">Curriculum Coming Soon</h5>
+                                                <p className="text-gray-600 leading-relaxed">
+                                                    The detailed curriculum for this course will be available soon. Please check back later or contact us for more information.
+                                                </p>
                                             </div>
-                                        ))}
+                                        )}
                                     </div>
                                 </div>
                             )}
@@ -82,26 +87,7 @@ const CourseDetailPage = ({ course, navigate }) => {
 
                     {/* Sidebar */}
                     <div className="lg:col-span-1 space-y-6">
-                        <div className="bg-white border-2 border-gray-50 rounded-xl overflow-hidden shadow-sm">
-                            <div className="p-6 flex items-center space-x-6 border-b border-gray-50">
-                                <div className="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center text-white shadow-lg">
-                                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2m12-11a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                                </div>
-                                <div>
-                                    <p className="text-gray-400 font-bold text-sm uppercase">Maximum Students</p>
-                                    <p className="text-xl font-black text-navy-900">10</p>
-                                </div>
-                            </div>
-                            <div className="p-6 flex items-center space-x-6">
-                                <div className="w-14 h-14 bg-red-500 rounded-full flex items-center justify-center text-white shadow-lg">
-                                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-7h1" /></svg>
-                                </div>
-                                <div>
-                                    <p className="text-gray-400 font-bold text-sm uppercase">Skill Level</p>
-                                    <p className="text-xl font-black text-navy-900">Advanced</p>
-                                </div>
-                            </div>
-                        </div>
+
 
                         <button
 

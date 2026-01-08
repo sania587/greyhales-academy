@@ -39,24 +39,33 @@ const HomePage = ({ navigate }) => {
         return () => window.removeEventListener('resize', updateItemsToShow);
     }, []);
 
+    // Only auto-scroll if there are more items than can be shown
+    const needsCarousel = totalItems > itemsToShow;
+
     useEffect(() => {
+        if (!needsCarousel) return;
+
         const timer = setInterval(() => {
             nextSlide();
         }, 10000);
         return () => clearInterval(timer);
-    }, [currentIndex, itemsToShow]);
+    }, [currentIndex, itemsToShow, needsCarousel]);
 
     const nextSlide = () => {
+        if (!needsCarousel) return;
         setCurrentIndex((prev) => {
+            const maxIndex = totalItems - itemsToShow;
             const nextIndex = prev + 1;
-            return nextIndex >= totalItems ? 0 : nextIndex;
+            return nextIndex > maxIndex ? 0 : nextIndex;
         });
     };
 
     const prevSlide = () => {
+        if (!needsCarousel) return;
         setCurrentIndex((prev) => {
+            const maxIndex = totalItems - itemsToShow;
             const prevIndex = prev - 1;
-            return prevIndex < 0 ? totalItems - 1 : prevIndex;
+            return prevIndex < 0 ? maxIndex : prevIndex;
         });
     };
 
@@ -252,7 +261,7 @@ const HomePage = ({ navigate }) => {
                         <div className="relative overflow-hidden px-4 md:px-12">
                             <div
                                 className="flex transition-transform duration-700 ease-in-out"
-                                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                                style={{ transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` }}
                             >
                                 {courses.map((course, index) => (
                                     <div
@@ -285,19 +294,23 @@ const HomePage = ({ navigate }) => {
                             </div>
                         </div>
 
-                        {/* Navigation Arrows */}
-                        <button
-                            onClick={prevSlide}
-                            className="absolute left-0 top-1/2 -translate-y-1/2 z-30 bg-white border border-gray-100 p-2 rounded shadow-lg text-orange-500 hover:scale-110 transition-transform flex items-center justify-center"
-                        >
-                            <ChevronLeft size={24} strokeWidth={3} />
-                        </button>
-                        <button
-                            onClick={nextSlide}
-                            className="absolute right-0 top-1/2 -translate-y-1/2 z-30 bg-white border border-gray-100 p-2 rounded shadow-lg text-orange-500 hover:scale-110 transition-transform flex items-center justify-center"
-                        >
-                            <ChevronRight size={24} strokeWidth={3} />
-                        </button>
+                        {/* Navigation Arrows - Only show if carousel is needed */}
+                        {needsCarousel && (
+                            <>
+                                <button
+                                    onClick={prevSlide}
+                                    className="absolute left-0 top-1/2 -translate-y-1/2 z-30 bg-white border border-gray-100 p-2 rounded shadow-lg text-orange-500 hover:scale-110 transition-transform flex items-center justify-center"
+                                >
+                                    <ChevronLeft size={24} strokeWidth={3} />
+                                </button>
+                                <button
+                                    onClick={nextSlide}
+                                    className="absolute right-0 top-1/2 -translate-y-1/2 z-30 bg-white border border-gray-100 p-2 rounded shadow-lg text-orange-500 hover:scale-110 transition-transform flex items-center justify-center"
+                                >
+                                    <ChevronRight size={24} strokeWidth={3} />
+                                </button>
+                            </>
+                        )}
                     </div>
                 </div>
             </section>

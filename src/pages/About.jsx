@@ -28,9 +28,9 @@ const AboutPage = () => {
 
                     <div className="grid md:grid-cols-1 gap-12 items-center">
 
-                        <div className="text-justify space-y-4 text-gray-700 leading-relaxed">
+                        <div className="text-justify space-y-4 italic text-gray-700 leading-relaxed">
                             <p>
-                                Greyhales Academy was created with a simple belief: interior design should feel accessible, inspiring, and genuinely transformative. We exist to guide emerging designers with warmth, clarity, and the kind of practical knowledge that truly builds confidence.
+                                "Greyhales Academy was created with a simple belief: interior design should feel accessible, inspiring, and genuinely transformative. We exist to guide emerging designers with warmth, clarity, and the kind of practical knowledge that truly builds confidence.
                             </p>
                             <p>
                                 Our mission is to help people see design not just as decoration, but as a thoughtful craft that shapes how we live. Every course we create reflects that purpose. We teach with honesty, curiosity, and a deep respect for both creativity and function.
@@ -48,7 +48,7 @@ const AboutPage = () => {
                                 The impact we aim to create goes beyond completing a course. We want our students to step into the design industry with confidence, a strong creative point of view, and a deeper appreciation for the spaces we shape.
                             </p>
                             <p>
-                                Greyhales Academy is more than an online school, it's a place where potential feels tangible, creativity feels supported, and every learner is encouraged to grow into the designer they're meant to become.
+                                Greyhales Academy is more than an online school, it's a place where potential feels tangible, creativity feels supported, and every learner is encouraged to grow into the designer they're meant to become."
                             </p>
                         </div>
                     </div>

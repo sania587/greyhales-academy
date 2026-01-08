@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Phone, MessageCircle, MoreHorizontal, UserCheck, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
+import welcomeImage from '../assets/image.jpeg';
 
 const HomePage = ({ navigate }) => {
     const courses = [
@@ -174,7 +175,7 @@ const HomePage = ({ navigate }) => {
                                 {/* 3. Main Image Container (Circular) */}
                                 <div className="absolute inset-0 rounded-full overflow-hidden border-1 border-orange-700/20 shadow-[0_20px_50px_rgba(0,0,0,0.15)] z-10">
                                     <img
-                                        src="../src/assets/image.jpeg"
+                                        src={welcomeImage}
                                         alt="Small Class Training"
                                         className="w-full h-full object-cover scale-110"
                                     />

@@ -5,17 +5,18 @@ import welcomeImage from '../assets/image.jpeg';
 const HomePage = ({ navigate }) => {
     const courses = [
         {
-            title: 'Module 1: Interior Design Blueprint Course',
+            title: 'Interior Design Blueprint Course',
             img: 'https://jdinstituteoffashiontechnology.b-cdn.net/wp-content/uploads/2025/11/Certificate-Course-in-Modular-Interior-Design--1536x1024.webp'
         },
         {
-            title: 'Module 2: Computer Aids Design',
-            img: 'https://www.elcamino.edu/images/New_CADD_Hero_Banner.jpg'
+            title: 'Interio Business Mastery',
+            img: 'https://booksofdiscovery.com/wp-content/uploads/2022/08/BM-F-450pxw.jpg'
         },
         {
-            title: 'Module 3: Interio Business Mastery',
-            img: 'https://booksofdiscovery.com/wp-content/uploads/2022/08/BM-F-450pxw.jpg'
+            title: 'Computer Aided Design',
+            img: 'https://www.elcamino.edu/images/New_CADD_Hero_Banner.jpg'
         }
+
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);

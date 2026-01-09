@@ -4,7 +4,7 @@ const CoursesPage = ({ navigate, onSelectCourse }) => {
     const courses = [
         {
             id: 1,
-            title: 'Module 1: Interior Design Blueprint Course',
+            title: 'Interior Design Blueprint Course',
             img: 'https://jdinstituteoffashiontechnology.b-cdn.net/wp-content/uploads/2025/11/Certificate-Course-in-Modular-Interior-Design--1536x1024.webp',
             desc: "This carefully curated blueprint course walks you through the complete interior design process. You'll learn how to plan, style, visualize, and present interior spaces professionally-culminating in a final project that showcases your design expertise and creative growth",
             level: 'All Levels',
@@ -53,24 +53,7 @@ const CoursesPage = ({ navigate, onSelectCourse }) => {
         },
         {
             id: 2,
-            title: 'Module 2: Computer Aids Design',
-            img: 'https://www.elcamino.edu/images/New_CADD_Hero_Banner.jpg',
-            desc: 'This module focuses on Computer-Aided Design (CAD) as a fundamental aspect of modern interior design. Learn to create professional 2D floor plans, elevations, and 3D visualizations using industry-standard software to bring your design concepts to life.',
-            level: 'All Levels',
-            curriculum: [
-                {
-                    title: 'Lesson 1: Introduction to CAD for Interior Design',
-                    content: 'Learn the fundamentals of Computer-Aided Design and how it revolutionizes the interior design workflow, from initial concepts to final presentations.'
-                },
-                {
-                    title: 'Lesson 2: 2D Drafting Fundamentals',
-                    content: 'Master the essential 2D drafting tools and techniques for creating floor plans, elevations, sections, and construction documents.'
-                }
-            ]
-        },
-        {
-            id: 3,
-            title: 'Module 3: Interio Business Mastery',
+            title: 'Interio Business Mastery',
             img: 'https://booksofdiscovery.com/wp-content/uploads/2022/08/BM-F-450pxw.jpg',
             desc: 'This is a business-focused course designed to help interior designers turn their creative skills into a profitable and sustainable business. This course covers everything from brand building and client acquisition to project management and long-term growth strategies.',
             level: 'All Levels',
@@ -104,6 +87,24 @@ const CoursesPage = ({ navigate, onSelectCourse }) => {
                     title: 'Lesson 6: Advanced Growth Strategies',
 
                     content: 'Explore advanced strategies for scaling your interior design business, increasing profitability, expanding your services, and positioning yourself for long-term success.'
+                }
+            ]
+
+        },
+        {
+            id: 3,
+            title: 'Computer Aided Design',
+            img: 'https://www.elcamino.edu/images/New_CADD_Hero_Banner.jpg',
+            desc: 'This module focuses on Computer-Aided Design (CAD) as a fundamental aspect of modern interior design. Learn to create professional 2D floor plans, elevations, and 3D visualizations using industry-standard software to bring your design concepts to life.',
+            level: 'All Levels',
+            curriculum: [
+                {
+                    title: 'Lesson 1: Introduction to CAD for Interior Design',
+                    content: 'Learn the fundamentals of Computer-Aided Design and how it revolutionizes the interior design workflow, from initial concepts to final presentations.'
+                },
+                {
+                    title: 'Lesson 2: 2D Drafting Fundamentals',
+                    content: 'Master the essential 2D drafting tools and techniques for creating floor plans, elevations, sections, and construction documents.'
                 }
             ]
         }

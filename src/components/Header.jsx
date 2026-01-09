@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Header = ({ navigate, currentPage }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -17,9 +18,9 @@ const Header = ({ navigate, currentPage }) => {
                 <div className="flex justify-between items-center py-4">
                     <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate('home')}>
                         <img
-                            src="https://www.interiordesignacademy.my/wp-content/uploads/2025/01/ida-logo.png"
+                            src={logo}
                             alt="IDA Logo"
-                            className="h-12 w-auto object-contain"
+                            className="h-15 w-auto object-contain"
                         />
                         <h1 className="text-xl font-bold text-gray-900">
                             <span className="sm:hidden text-md">Greyhales Academy</span>

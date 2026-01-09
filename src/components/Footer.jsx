@@ -1,6 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Youtube, Phone, Mail, Instagram, Linkedin } from 'lucide-react';
-
+import logo from '../assets/logo.png';
 const Footer = ({ navigate }) => {
     return (
         <footer className="bg-navy-900 text-white">
@@ -10,9 +10,9 @@ const Footer = ({ navigate }) => {
                     <div className="col-span-1 lg:col-span-1">
                         <div className="flex items-center space-x-3 mb-6 cursor-pointer" onClick={() => navigate('home')}>
                             <img
-                                src="https://www.interiordesignacademy.my/wp-content/uploads/2025/01/ida-logo.png"
+                                src={logo}
                                 alt="IDA Logo"
-                                className="h-12 w-auto object-contain"
+                                className="h-15 w-auto object-contain"
                             />
                         </div>
                         <p className="text-gray-400 leading-relaxed mb-6">

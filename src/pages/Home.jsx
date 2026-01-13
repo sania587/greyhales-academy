@@ -1,23 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Phone, MessageCircle, MoreHorizontal, UserCheck, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
 import welcomeImage from '../assets/image.jpeg';
+import courses from '../data/courses';
 
 const HomePage = ({ navigate }) => {
-    const courses = [
-        {
-            title: 'Interior Design Blueprint Course',
-            img: 'https://jdinstituteoffashiontechnology.b-cdn.net/wp-content/uploads/2025/11/Certificate-Course-in-Modular-Interior-Design--1536x1024.webp'
-        },
-        {
-            title: 'Interio Business Mastery',
-            img: 'https://booksofdiscovery.com/wp-content/uploads/2022/08/BM-F-450pxw.jpg'
-        },
-        {
-            title: 'Computer Aided Design',
-            img: 'https://www.elcamino.edu/images/New_CADD_Hero_Banner.jpg'
-        }
 
-    ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsToShow, setItemsToShow] = useState(3);
@@ -282,7 +269,7 @@ const HomePage = ({ navigate }) => {
                                                     {/* Shadow/Border effect for button */}
                                                     <div className="absolute inset-0 bg-gray-800/20 translate-x-2 translate-y-2 rounded"></div>
                                                     <button
-                                                        onClick={() => navigate('courses')}
+                                                        onClick={() => navigate('course-detail', course)}
                                                         className="relative w-full bg-[#EA9457] text-white font-extrabold py-4 rounded shadow-lg hover:bg-[#d88448] transition-colors"
                                                     >
                                                         See Preview

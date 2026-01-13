@@ -1,5 +1,6 @@
 import React from 'react';
-import { Facebook, Twitter, Youtube, Phone, Mail, Instagram, Linkedin } from 'lucide-react';
+import { FaTiktok, FaPinterest, FaInstagram } from 'react-icons/fa';
+import { Phone, Mail } from 'lucide-react';
 import logo from '../assets/logo.png';
 const Footer = ({ navigate }) => {
     return (
@@ -19,18 +20,16 @@ const Footer = ({ navigate }) => {
                             Greyhales Academy offers personalized, focused learning to develop creativity and professional skills, preparing students for success in residential and commercial design.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all group">
-                                <Facebook size={20} className="group-hover:scale-110" />
+                            <a href="https://www.tiktok.com/@greyhalesacademy?_r=1&_t=ZS-92xo6V8qGcW" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all group">
+                                <FaTiktok size={20} className="group-hover:scale-110" />
                             </a>
-                            <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all group">
-                                <Instagram size={20} className="group-hover:scale-110" />
+                            <a href="https://www.instagram.com/greyhalesconceptsltd?igsh=YTRmNW84Ym92aHFv&utm_source=qr" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all group">
+                                <FaInstagram size={20} className="group-hover:scale-110" />
                             </a>
-                            <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all group">
-                                <Youtube size={20} className="group-hover:scale-110" />
+                            <a href="https://pin.it/623e5q837" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all group">
+                                <FaPinterest size={20} className="group-hover:scale-110" />
                             </a>
-                            <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-orange-500 transition-all group">
-                                <Linkedin size={20} className="group-hover:scale-110" />
-                            </a>
+
                         </div>
                     </div>
 

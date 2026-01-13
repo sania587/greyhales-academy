@@ -75,7 +75,7 @@ const ContactPage = ({ navigate }) => {
                 </div>
             </section>
 
-            {/* Form Section */}
+            {/* Form Section 
             <section className="py-24 px-4 bg-orange-500/80 text-white">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-5xl font-black text-white mb-16">Got Question?</h2>
@@ -133,7 +133,6 @@ const ContactPage = ({ navigate }) => {
                             ></textarea>
                         </div>
 
-                        {/* Dummy reCAPTCHA Placeholder */}
                         <div className="bg-gray-50 border border-gray-200 rounded p-4 inline-flex items-center space-x-4">
                             <div className="w-6 h-6 border-2 border-gray-300 rounded"></div>
                             <span className="text-gray-600 font-medium">I'm not a robot</span>
@@ -153,21 +152,9 @@ const ContactPage = ({ navigate }) => {
                         </div>
                     </form>
                 </div>
-            </section>
+            </section>*/}
 
-            {/* Map Section */}
-            <div className="w-full h-[600px] bg-gray-100">
-                <iframe
-                    title="location-map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15934.346853385732!2d101.6215!3d3.2201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4612e69818e3%3A0xe5a363a0a39a7a9a!2sTaman%20Ehsan%2C%2052100%20Kuala%20Lumpur%2C%20Selangor%2C%20Malaysia!5e0!3m2!1sen!2snl!4v1700000000000!5m2!1sen!2snl"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-            </div>
+
         </main>
     );
 };

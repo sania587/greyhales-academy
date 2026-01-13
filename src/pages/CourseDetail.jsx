@@ -73,10 +73,8 @@ const CourseDetailPage = ({ course, navigate }) => {
                                             ))
                                         ) : (
                                             <div className="border-l-4 border-orange-500 pl-6 py-2">
-                                                <h5 className="text-xl font-bold text-navy-900 mb-3">Curriculum Coming Soon</h5>
-                                                <p className="text-gray-600 leading-relaxed">
-                                                    The detailed curriculum for this course will be available soon. Please check back later or contact us for more information.
-                                                </p>
+                                                <h5 className="text-xl font-bold text-navy-900 mb-3">Coming Soon...</h5>
+
                                             </div>
                                         )}
                                     </div>

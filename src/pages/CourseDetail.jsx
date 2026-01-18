@@ -90,10 +90,10 @@ const CourseDetailPage = ({ course, navigate }) => {
                         {course.price ? (
                             <button
                                 onClick={() => navigate('enrollment', course)}
-                                className="flex justify-center items-center w-full bg-navy-900 text-white py-5 rounded-xl font-black text-xl hover:bg-black transition-all shadow-xl hover:-translate-y-1"
+                                className="flex justify-center grid grid-cols-1 items-center w-full bg-navy-900 text-white py-5 rounded-xl font-black text-xl hover:bg-black transition-all shadow-xl hover:-translate-y-1"
                             >
-                                <span className="mr-2 italic">₦{course.price.toLocaleString()}</span>
-                                <span>Enroll Now</span>
+                                <span className="mr-2 italic items-center">₦{course.price.toLocaleString()}</span>
+                                <span className="items-center">Enroll Now</span>
                             </button>
                         ) : (
                             <div className="flex justify-center items-center w-full bg-gray-100 text-orange-500 py-5 rounded-xl font-black text-xl uppercase tracking-widest">

@@ -1,10 +1,12 @@
-require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const Enrollment = require('./models/Enrollment');
 const User = require('./models/User');
 const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -12,9 +14,9 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-
+const mongouri = process.env.MONGODB_URI || "mongodb+srv://zaheersania7:zaheersania7@mycluster.uxkyf.mongodb.net/courses?retryWrites=true&w=majority&appName=MyCluster";
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(mongouri)
     .then(() => {
         console.log('Connected to MongoDB Atlas');
         seedAdmin();

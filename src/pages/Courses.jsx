@@ -63,13 +63,15 @@ const CoursesPage = ({ navigate, onSelectCourse }) => {
                                     </p>
                                 </div>
 
-                                <div className="flex justify-end pt-6">
+                                <div className="flex flex-col items-center justify-center pt-6 space-y-4">
                                     <button
                                         onClick={() => handleReadMore(course)}
-                                        className="bg-[#EA9457] text-white px-12 py-3 rounded text-xl font-black hover:bg-[#d88448] transition-all shadow-md active:scale-95"
+                                        className="w-[200px] bg-[#EA9457] text-white font-extrabold py-3 rounded shadow-lg hover:bg-[#d88448] transition-colors"
                                     >
-                                        Read more
+                                        Learn More
                                     </button>
+
+
                                 </div>
                             </div>
                         </div>

@@ -87,12 +87,19 @@ const CourseDetailPage = ({ course, navigate }) => {
                     <div className="lg:col-span-1 space-y-6">
 
 
-                        <button
-
-                            className="w-full bg-navy-900 text-white py-5 rounded-xl font-black text-xl hover:bg-black transition-all shadow-xl hover:-translate-y-1"
-                        >
-                            Enroll Now
-                        </button>
+                        {course.price ? (
+                            <button
+                                onClick={() => navigate('enrollment', course)}
+                                className="flex justify-center items-center w-full bg-navy-900 text-white py-5 rounded-xl font-black text-xl hover:bg-black transition-all shadow-xl hover:-translate-y-1"
+                            >
+                                <span className="mr-2 italic">₦{course.price.toLocaleString()}</span>
+                                <span>Enroll Now</span>
+                            </button>
+                        ) : (
+                            <div className="flex justify-center items-center w-full bg-gray-100 text-orange-500 py-5 rounded-xl font-black text-xl uppercase tracking-widest">
+                                Coming Soon
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

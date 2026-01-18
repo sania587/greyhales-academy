@@ -46,11 +46,13 @@ const courses = [
                 title: "Module 10: Final Project",
                 content: "Apply everything learned throughout the course to complete a comprehensive interior design project, showcasing your skills from concept development to final presentation."
             }
-        ]
+        ],
+        price: 50000
+
     },
     {
         id: 2,
-        title: 'Interio Business Mastery',
+        title: 'Interior Business Mastery',
         img: 'https://booksofdiscovery.com/wp-content/uploads/2022/08/BM-F-450pxw.jpg',
         desc: 'This is a business-focused course designed to help interior designers turn their creative skills into a profitable and sustainable business. This course covers everything from brand building and client acquisition to project management and long-term growth strategies.',
         level: 'All Levels',
@@ -85,7 +87,8 @@ const courses = [
 
                 content: 'Explore advanced strategies for scaling your interior design business, increasing profitability, expanding your services, and positioning yourself for long-term success.'
             }
-        ]
+        ],
+        price: 50000
 
     },
     {

@@ -10,6 +10,10 @@ const HomePage = ({ navigate }) => {
     const [itemsToShow, setItemsToShow] = useState(3);
     const totalItems = courses.length;
 
+    const handleReadMore = (course) => {
+        navigate('course-detail', course);
+    };
+
     // Update itemsToShow based on window size
     useEffect(() => {
         const updateItemsToShow = () => {
@@ -182,8 +186,8 @@ const HomePage = ({ navigate }) => {
 
                                 {/* 1. Decorative Dot Pattern (Top Right Background) */}
                                 <div className="absolute -top-10 -right-10 opacity-60 z-0 select-none">
-                                    <div className="grid grid-cols-14 gap-3">
-                                        {[...Array(260)].map((_, i) => (
+                                    <div className="grid grid-cols-[repeat(20,minmax(0,1fr))] gap-3">
+                                        {[...Array(200)].map((_, i) => (
                                             <div key={i} className="w-1.5 h-1.5 bg-orange-600/60 rounded-full"></div>
                                         ))}
                                     </div>
@@ -253,28 +257,23 @@ const HomePage = ({ navigate }) => {
                             >
                                 {courses.map((course, index) => (
                                     <div
-                                        key={index}
+                                        key={course.id || index}
                                         className="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
                                     >
-                                        <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col h-full min-h-[500px]">
+                                        <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col h-full min-h-[400px]">
                                             <div className="h-64 overflow-hidden">
                                                 <img src={course.img} alt={course.title} className="w-full h-full object-cover" />
                                             </div>
-                                            <div className="p-8 flex flex-col flex-grow justify-between">
-                                                <h3 className="text-xl font-bold text-navy-900 leading-tight mb-8">
+                                            <div className="p-4 flex flex-col justify-between flex-grow">
+                                                <h3 className="text-xl font-bold text-navy-900 mb-4 text-center">
                                                     {course.title}
                                                 </h3>
-
-                                                <div className="relative">
-                                                    {/* Shadow/Border effect for button */}
-                                                    <div className="absolute inset-0 bg-gray-800/20 translate-x-2 translate-y-2 rounded"></div>
-                                                    <button
-                                                        onClick={() => navigate('course-detail', course)}
-                                                        className="relative w-full bg-[#EA9457] text-white font-extrabold py-4 rounded shadow-lg hover:bg-[#d88448] transition-colors"
-                                                    >
-                                                        See Preview
-                                                    </button>
-                                                </div>
+                                                <button
+                                                    onClick={() => handleReadMore(course)}
+                                                    className="w-full bg-[#EA9457] text-white font-extrabold mt-auto py-3 rounded shadow-lg hover:bg-[#d88448] transition-colors"
+                                                >
+                                                    Learn More
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -287,13 +286,13 @@ const HomePage = ({ navigate }) => {
                             <>
                                 <button
                                     onClick={prevSlide}
-                                    className="absolute left-0 top-1/2 -translate-y-1/2 z-30 bg-white border border-gray-100 p-2 rounded shadow-lg text-orange-500 hover:scale-110 transition-transform flex items-center justify-center"
+                                    className="absolute left-0 top-1/2 -translate-y-1/2 z-30 bg-white border border-gray-100 p-2 rounded shadow-lg text-orange-500 hover:scale-110 transition-transform flex items-center justify-center focus:outline-none"
                                 >
                                     <ChevronLeft size={24} strokeWidth={3} />
                                 </button>
                                 <button
                                     onClick={nextSlide}
-                                    className="absolute right-0 top-1/2 -translate-y-1/2 z-30 bg-white border border-gray-100 p-2 rounded shadow-lg text-orange-500 hover:scale-110 transition-transform flex items-center justify-center"
+                                    className="absolute right-0 top-1/2 -translate-y-1/2 z-30 bg-white border border-gray-100 p-2 rounded shadow-lg text-orange-500 hover:scale-110 transition-transform flex items-center justify-center focus:outline-none"
                                 >
                                     <ChevronRight size={24} strokeWidth={3} />
                                 </button>

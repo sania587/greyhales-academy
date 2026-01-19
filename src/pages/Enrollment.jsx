@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import API_BASE_URL from '../config/api';
 
 const EnrollmentPage = ({ navigate, course, token }) => {
     const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ const EnrollmentPage = ({ navigate, course, token }) => {
 
         try {
             // Actual backend URL will be used once server is set up
-            const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/enroll`, {
+            const response = await fetch(`${API_BASE_URL}/api/enroll`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

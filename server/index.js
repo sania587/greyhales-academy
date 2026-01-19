@@ -14,14 +14,21 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-const mongouri = process.env.MONGODB_URI;
 // MongoDB Connection
+const mongouri = "mongodb+srv://zaheersania7:zaheersania7@mycluster.uxkyf.mongodb.net/courses?retryWrites=true&w=majority&appName=MyCluster";
+
 mongoose.connect(mongouri)
     .then(() => {
         console.log('Connected to MongoDB Atlas');
         seedAdmin();
     })
-    .catch((err) => console.error('MongoDB connection error:', err));
+    .catch((err) => {
+        console.error('MongoDB connection error details:', {
+            name: err.name,
+            message: err.message,
+            code: err.code
+        });
+    });
 
 // Admin Seeding Function
 const seedAdmin = async () => {
@@ -48,7 +55,8 @@ const verifyToken = (req, res, next) => {
     const token = req.headers['authorization']?.split(' ')[1];
     if (!token) return res.status(401).json({ error: 'No token provided' });
 
-    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    const jwtSecret = "greyhales_academy_secret_key_2024";
+    jwt.verify(token, jwtSecret, (err, decoded) => {
         if (err) return res.status(401).json({ error: 'Failed to authenticate token' });
         req.userId = decoded.id;
         req.userRole = decoded.role;
@@ -74,11 +82,12 @@ app.post('/api/auth/register', async (req, res) => {
         const user = new User({ name, email, password });
         await user.save();
 
-        const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1d' });
+        const jwtSecret = "greyhales_academy_secret_key_2024";
+        const token = jwt.sign({ id: user._id, role: user.role }, jwtSecret, { expiresIn: '1d' });
         res.status(201).json({ token, user: { id: user._id, name: user.name, email: user.email, role: user.role } });
     } catch (error) {
-        console.error('Registration error:', error);
-        res.status(500).json({ error: 'Internal server error during registration' });
+        console.error('Registration error details:', error);
+        res.status(500).json({ error: 'Internal server error during registration', details: error.message });
     }
 });
 
@@ -95,11 +104,12 @@ app.post('/api/auth/login', async (req, res) => {
             return res.status(401).json({ error: 'Invalid email or password' });
         }
 
-        const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1d' });
+        const jwtSecret = "greyhales_academy_secret_key_2024";
+        const token = jwt.sign({ id: user._id, role: user.role }, jwtSecret, { expiresIn: '1d' });
         res.json({ token, user: { id: user._id, name: user.name, email: user.email, role: user.role } });
     } catch (error) {
-        console.error('Login error:', error);
-        res.status(500).json({ error: 'Internal server error during login' });
+        console.error('Login error details:', error);
+        res.status(500).json({ error: 'Internal server error during login', details: error.message });
     }
 });
 

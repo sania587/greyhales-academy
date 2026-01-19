@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-const mongouri = process.env.MONGODB_URI || "mongodb+srv://zaheersania7:zaheersania7@mycluster.uxkyf.mongodb.net/courses?retryWrites=true&w=majority&appName=MyCluster";
+const mongouri = process.env.MONGODB_URI;
 // MongoDB Connection
 mongoose.connect(mongouri)
     .then(() => {
@@ -128,3 +128,5 @@ app.get('/api/enroll', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+module.exports = app;

@@ -84,19 +84,19 @@ const CourseDetailPage = ({ course, navigate }) => {
                     </div>
 
                     {/* Sidebar */}
-                    <div className="lg:col-span-1 space-y-6">
+                    <div className="lg:col-span-1 space-y-6 flex flex-col items-center">
 
 
                         {course.price ? (
                             <button
                                 onClick={() => navigate('enrollment', course)}
-                                className="flex justify-center grid grid-cols-1 items-center w-full bg-navy-900 text-white py-5 rounded-xl font-black text-xl hover:bg-black transition-all shadow-xl hover:-translate-y-1"
+                                className="flex justify-center grid grid-cols-1 items-center bg-navy-900 text-white px-10 py-3 rounded-xl font-black hover:bg-black transition-all shadow-xl hover:-translate-y-1"
                             >
-                                <span className="mr-2 italic items-center">₦{course.price.toLocaleString()}</span>
-                                <span className="items-center">Enroll Now</span>
+                                <span className="mr-2 italic items-center text-md">₦{course.price.toLocaleString()}</span>
+                                <span className="items-center text-md">Enroll Now</span>
                             </button>
                         ) : (
-                            <div className="flex justify-center items-center w-full bg-gray-100 text-orange-500 py-5 rounded-xl font-black text-xl uppercase tracking-widest">
+                            <div className="flex justify-center items-center w-full bg-gray-100 text-orange-500 py-5 rounded-xl font-black text-md uppercase tracking-widest">
                                 Coming Soon
                             </div>
                         )}

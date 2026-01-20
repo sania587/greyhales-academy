@@ -21,16 +21,16 @@ const PaymentInfoPage = ({ navigate }) => {
                             <span className="text-navy-900 font-black">Monipoint Microfinance Bank</span>
 
                             <span className="text-gray-500 font-bold uppercase text-sm">Account Number</span>
-                            <span className="text-orange-500 font-black text-2xl tracking-widest">8148554538</span>
+                            <span className="text-orange-500 font-black text-xl tracking-widest sm:text-md">8148554538</span>
 
                             <span className="text-gray-500 font-bold uppercase text-sm">Account Name</span>
                             <span className="text-navy-900 font-black italic">Greyhales Academy</span>
                         </div>
                     </div>
 
-                    <div className="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-xl">
-                        <p className="text-navy-900 font-medium text-lg italic">
-                            "Please forward your proof of payment to <a href="mailto:enrollment@greyhalesacademy.com" className="text-orange-600 font-bold underline">enrollment@greyhalesacademy.com</a>"
+                    <div className="bg-orange-50 border-l-4 border-orange-500 p-3 rounded-r-xl">
+                        <p className="text-navy-900 font-medium text-md italic sm:text-sm">
+                            "Please forward your proof of payment to <a href="mailto:enrollment@greyhalesacademy.com" className="text-orange-600 font-bold underline text-sm">enrollment@greyhalesacademy.com</a>"
                         </p>
                     </div>
 

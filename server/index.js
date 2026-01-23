@@ -162,6 +162,16 @@ app.get('/api/enroll', verifyToken, async (req, res) => {
     }
 });
 
+app.get('/api/debug-db', async (req, res) => {
+    try {
+        const result = await sql`SELECT NOW()`;
+        res.json({ message: 'Database connected successfully', time: result.rows[0] });
+    } catch (error) {
+        console.error('Database connection test failed:', error);
+        res.status(500).json({ error: 'Database connection failed', details: error.message });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
     initDB(); // Initialize DB tables on startup

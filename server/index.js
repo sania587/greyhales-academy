@@ -96,7 +96,7 @@ app.post('/api/auth/register', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const { rows: newUsers } = await sql`
-            INSERT INTO users (name, email, password, role)
+            INSERT INTO users (name, email, password, role) 
             VALUES (${name}, ${email}, ${hashedPassword}, 'user')
             RETURNING id, name, email, role
         `;

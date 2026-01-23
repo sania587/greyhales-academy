@@ -4,8 +4,10 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 const seedAdminUser = async () => {
+    const mongouri = "Add your monodb url here";
+
     try {
-        await mongoose.connect(process.env.MONGODB_URI);
+        await mongoose.connect(mongouri);
 
         console.log('MongoDB connected');
 

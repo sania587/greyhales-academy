@@ -97,7 +97,7 @@ const seedAdmin = async () => {
             console.log("✅ Admin user created");
         }
     } catch (error) {
-        console.error("❌ Admin seed error:", error);
+        console.error(" Admin seed error:", error);
     }
 };
 

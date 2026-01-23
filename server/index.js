@@ -15,12 +15,15 @@ app.use(cors({
     origin: [
         'https://greyhalesacademy.com',
         'https://www.greyhalesacademy.com',
-        'https://greyhales-academy.vercel.app'
+        'https://greyhales-academy.vercel.app',
+        'http://localhost:5173',
+        'http://localhost:5000'
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
+app.options('*', cors()); // Enable pre-flight requests
 app.use(express.json());
 
 // Initialize Database Tables

@@ -162,19 +162,43 @@ app.get('/api/enroll', verifyToken, async (req, res) => {
     }
 });
 
+app.get('/api/init-db', async (req, res) => {
+    try {
+        await initDB();
+        res.json({ message: 'Database initialization attempted. Check logs for details.' });
+    } catch (error) {
+        res.status(500).json({ error: 'Init failed', details: error.message });
+    }
+});
+
 app.get('/api/debug-db', async (req, res) => {
     try {
+        // Log environment status (safety mask the password)
+        const hasUrl = !!process.env.POSTGRES_URL;
+        console.log('Debug: Checking DB connection. Has POSTGRES_URL:', hasUrl);
+
         const result = await sql`SELECT NOW()`;
-        res.json({ message: 'Database connected successfully', time: result.rows[0] });
+        res.json({
+            message: 'Database connected successfully',
+            time: result.rows[0],
+            env_check: { has_postgres_url: hasUrl }
+        });
     } catch (error) {
         console.error('Database connection test failed:', error);
-        res.status(500).json({ error: 'Database connection failed', details: error.message });
+        res.status(500).json({
+            error: 'Database connection failed',
+            details: error.message,
+            stack: error.stack,
+            env_check: { has_postgres_url: !!process.env.POSTGRES_URL }
+        });
     }
 });
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
-    initDB(); // Initialize DB tables on startup
+    // We still try to init on listen, but since Vercel might skip this, 
+    // the /api/init-db route is the backup.
+    initDB();
 });
 
 module.exports = app;

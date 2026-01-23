@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
     origin: [
         'https://greyhalesacademy.com',
+        'https://www.greyhalesacademy.com',
         'https://greyhales-academy.vercel.app'
     ],
     credentials: true,
